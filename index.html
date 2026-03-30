@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции АО ХМЗ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .page-wrapper {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 24px 40px 20px 40px;
+            border-bottom: 3px solid #1a5490;
+            text-align: left;
+        }
+        .header img.CMP_Logo {
+            height: 64px;
+            width: auto;
+            display: block;
+        }
+        /* Intro */
+        .intro {
+            padding: 28px 40px 10px 40px;
+        }
+        .intro h1 {
+            color: #1a5490;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+        .intro p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.7;
+            margin: 0 0 6px 0;
+        }
+        /* Product section */
+        .section {
+            padding: 20px 40px;
+        }
+        .section-title {
+            color: #1a5490;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e8f0;
+        }
+        /* Category header — блёклый */
+        .category-header {
+            background-color: #dce8f5;
+            color: #7a9cbf;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            padding: 9px 16px;
+            margin: 12px 0 0 0;
+            border-radius: 4px;
+            letter-spacing: 0.3px;
+        }
+        /* Product item — чёткий */
+        .product-item {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a3a5c;
+            text-align: center;
+            padding: 8px 16px;
+            border-bottom: 1px solid #eef3f8;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        /* Services block */
+        .services-block {
+            margin: 8px 40px 16px 40px;
+            background: #f0f6ff;
+            border-radius: 8px;
+            padding: 18px 24px;
+        }
+        .services-block h3 {
+            color: #1a5490;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 12px 0;
+        }
+        .services-block p {
+            font-size: 13.5px;
+            color: #333;
+            line-height: 1.6;
+            margin: 0 0 6px 0;
+            text-align: center;
+        }
+        /* Advantages */
+        .advantages-block {
+            padding: 6px 40px 14px 40px;
+        }
+        .advantages-block h3 {
+            color: #1a5490;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e8f0;
+        }
+        .advantages-block ul {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            text-align: center;
+        }
+        .advantages-block li {
+            font-size: 13.5px;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+        .advantages-block li::before {
+            content: "• ";
+            color: #1a5490;
+            font-weight: bold;
+        }
+        /* Signature */
+        .signature-block {
+            margin: 8px 40px 18px 40px;
+            background: #f0f6ff;
+            border-radius: 8px;
+            padding: 18px 24px;
+            text-align: center;
+        }
+        .signature-block p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .signature-block a {
+            color: #1a5490;
+            text-decoration: none;
+        }
+        /* Divider */
+        .divider {
+            height: 3px;
+            background: linear-gradient(to right, #1a5490, #4a90d9);
+            margin: 0;
+        }
+        /* Footer */
+        .footer {
+            background-color: #f5f5f5;
+            padding: 16px 40px;
+            text-align: center;
+        }
+        .footer p {
+            margin: 4px 0;
+            font-size: 11px;
+            color: #999;
+            line-height: 1.5;
+        }
+        .footer a {
+            color: #999;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER: логотип встроен как base64 -->
+    <div class="header">
+        <img class="CMP_Logo"
+             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAAA5CAYAAAH8ca9DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAIsGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0wMS0yMlQwNDo1MDoyOSswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNC0wMS0yMlQwNDo1MDoyOSswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMDEtMjJUMDQ6NTA6MjkrMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmZmZGQ0YzE5LTE5NzEtM2Y0ZS05N2NkLWRjZGI0OGEzZjRkZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmIxMDU3YWY4LTBjMDYtN2M0Yy1hZDdlLWQyYWMyY2FiMjg2OCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjE5ZWU2ODYwLWUwOTYtMjU0Ny1hOGNlLWI1ODczMThkMGI3OSIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOWVlNjg2MC1lMDk2LTI1NDctYThjZS1iNTg3MzE4ZDBiNzkiIHN0RXZ0OndoZW49IjIwMjQtMDEtMjJUMDQ6NTA6MjkrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OTc5ZmZkZWItNDA3MS1lZjRiLWE5MjMtYjgyNjdmMjNiNTA5IiBzdEV2dDp3aGVuPSIyMDI0LTAxLTIyVDA0OjUwOjI5KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iZGVyaXZlZCIgc3RFdnQ6cGFyYW1ldGVycz0iY29udmVydGVkIGZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBz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"
+             alt="АО ХМЗ">
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- INTRO -->
+    <div class="intro">
+        <h1>Поставки химической продукции от АО ХМЗ</h1>
+        <p>Уважаемые партнёры!</p>
+        <p>АО «ХМЗ» поставляет высококачественные литиевые продукты собственного производства и является <strong>комплексным импортёром химических реагентов</strong> для различных секторов экономики.</p>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="section">
+        <h2 class="section-title">Основные категории продукции:</h2>
+
+        <!-- 1. Компоненты для литий-ионных аккумуляторов -->
+        <div class="category-header">Компоненты для литий-ионных аккумуляторов</div>
+        <div class="product-item">Катодная масса (NCM, LFP)</div>
+        <div class="product-item">Диметилкарбонат (DMC)</div>
+        <div class="product-item">Этиленкарбонат (EC)</div>
+        <div class="product-item">Тетрафторборат лития</div>
+        <div class="product-item">Виниленкарбонат (VC)</div>
+        <div class="product-item">Гексафторфосфат лития</div>
+        <div class="product-item">Диэтилкарбонат (DEC)</div>
+        <div class="product-item">Этилметилкарбонат (EMC)</div>
+        <div class="product-item">LiFSI</div>
+        <div class="product-item">Фторэтиленкарбонат (FEC)</div>
+        <div class="product-item">1,3-пропан сультон (PS)</div>
+        <div class="product-item">Проп-1-ен-1,3-сультон (PRS)</div>
+        <div class="product-item">Дифторфосфат лития</div>
+        <div class="product-item">LiDFOB</div>
+        <div class="product-item">Пропиленкарбонат (PC)</div>
+        <div class="product-item">Трис(триметилсилил)фосфат</div>
+
+        <!-- 2. Смазочные материалы -->
+        <div class="category-header">Смазочные материалы</div>
+        <div class="product-item">Дисульфид молибдена</div>
+        <div class="product-item">12-оксистеариновая кислота</div>
+        <div class="product-item">Себациновая кислота</div>
+        <div class="product-item">Олеиновая кислота</div>
+
+        <!-- 3. Полимерная промышленность -->
+        <div class="category-header">Полимерная промышленность</div>
+        <div class="product-item">Диметилацетамид</div>
+        <div class="product-item">4,4´-Дихлордифенилсульфон</div>
+        <div class="product-item">Метафенилендиамин</div>
+
+        <!-- 4. Металлургия -->
+        <div class="category-header">Металлургия</div>
+        <div class="product-item">Порошок кобальта</div>
+        <div class="product-item">Порошок никеля</div>
+        <div class="product-item">Натрий</div>
+        <div class="product-item">Калий</div>
+
+        <!-- 5. Керамика -->
+        <div class="category-header">Керамика</div>
+        <div class="product-item">Оксид кобальта</div>
+        <div class="product-item">Карбонат кобальта</div>
+        <div class="product-item">Гидроксид кобальта</div>
+
+        <!-- 6. Лакокрасочная промышленность -->
+        <div class="category-header">Лакокрасочная промышленность</div>
+        <div class="product-item">Гексиленгликоль</div>
+        <div class="product-item">Стеарат алюминия</div>
+
+        <!-- 7. Красители -->
+        <div class="category-header">Красители</div>
+        <div class="product-item">Красный 164</div>
+        <div class="product-item">Краситель "red powder" (порошкообразный красный)</div>
+        <div class="product-item">Красный краситель для охлаждающих жидкостей (водорастворимый)</div>
+        <div class="product-item">Краситель жёлтый 6001</div>
+        <div class="product-item">Краситель зелёный, растворитель</div>
+        <div class="product-item">Жидкий зелёный краситель (маслорастворимый)</div>
+        <div class="product-item">Краситель синий 98</div>
+        <div class="product-item">Coolant blue dye (водорастворимый) для охлаждающих жидкостей</div>
+        <div class="product-item">Розовый краситель для охлаждающих жидкостей</div>
+        <div class="product-item">Коричневый краситель (маслорастворимый)</div>
+        <div class="product-item">Чёрный краситель solvent black</div>
+        <div class="product-item">Флуоресцентная красительная добавка</div>
+        <div class="product-item">Coolant fluorescent dye (водорастворимый) для охлаждающих жидкостей</div>
+
+        <!-- 8. Другие продукты -->
+        <div class="category-header">Другие продукты</div>
+        <div class="product-item">Азелаиновая кислота</div>
+        <div class="product-item">Оксид никеля</div>
+        <div class="product-item">Сульфат никеля</div>
+        <div class="product-item">Рофамин Т</div>
+        <div class="product-item">Карбонат никеля</div>
+        <div class="product-item">Хлорид никеля</div>
+        <div class="product-item">Нитрат никеля</div>
+        <div class="product-item">Сульфат кобальта</div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- SERVICES -->
+    <div class="services-block">
+        <h3>Дополнительные услуги:</h3>
+        <p><strong>Импорт в РФ:</strong> Поиск и доставка специфических химических продуктов</p>
+        <p><strong>Экспорт из РФ:</strong> Поиск зарубежных покупателей и новых рынков сбыта</p>
+    </div>
+
+    <!-- ADVANTAGES -->
+    <div class="advantages-block">
+        <h3>Преимущества работы с АО ХМЗ:</h3>
+        <ul>
+            <li>Собственное производство литиевой продукции</li>
+            <li>Стабильность и надёжность поставок</li>
+            <li>Экспертиза в логистике и ВЭД</li>
+            <li>Работа с предприятиями любого размера</li>
+        </ul>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature-block">
+        <p>С уважением,</p>
+        <p>Команда АО «ХМЗ»</p>
+        <br>
+        <p>Тел. +7 (495) 713-92-55</p>
+        <p><a href="mailto:sales@cmplithium.com">sales@cmplithium.com</a></p>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><a href="{{unsubscribe_link}}">Отписаться от рассылки</a></p>
+        <p>© АО ХМЗ, 2025. Все права защищены.</p>
+    </div>
+
+</div>
+</body>
+</html>
